@@ -9,8 +9,10 @@
 import Foundation
 
 public struct GameController {
+    private let board: GameBoard
+    
     init() {
-        // do something
+        self.board = GameBoard()
     }
     
     public func play() -> Int {
