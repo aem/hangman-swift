@@ -8,5 +8,8 @@
 
 import Foundation
 
-print("Hello, World!")
-
+func main() -> Int {
+    let controller = GameController()
+    
+    return controller.play()
+}
