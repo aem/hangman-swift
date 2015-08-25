@@ -14,7 +14,8 @@ public struct GameController {
     }
     
     public func play() -> Int {
-        print("Game started")
+        print("Welcome to Hangman!\n")
+        print(HANGMAN_BOARD)
         
         return 0
     }

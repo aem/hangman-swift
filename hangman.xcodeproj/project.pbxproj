@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DE157E531B8D041D00EB5434 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157E521B8D041D00EB5434 /* main.swift */; };
 		DE157E5A1B8D04CA00EB5434 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157E591B8D04CA00EB5434 /* GameController.swift */; settings = {ASSET_TAGS = (); }; };
+		DE157E5C1B8D075500EB5434 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157E5B1B8D075500EB5434 /* constants.swift */; settings = {ASSET_TAGS = (); }; };
+		DE157E5E1B8D07B500EB5434 /* GameWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157E5D1B8D07B500EB5434 /* GameWord.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,8 @@
 		DE157E4F1B8D041D00EB5434 /* hangman */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hangman; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE157E521B8D041D00EB5434 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DE157E591B8D04CA00EB5434 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		DE157E5B1B8D075500EB5434 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		DE157E5D1B8D07B500EB5434 /* GameWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				DE157E521B8D041D00EB5434 /* main.swift */,
 				DE157E591B8D04CA00EB5434 /* GameController.swift */,
+				DE157E5B1B8D075500EB5434 /* constants.swift */,
+				DE157E5D1B8D07B500EB5434 /* GameWord.swift */,
 			);
 			path = hangman;
 			sourceTree = "<group>";
@@ -123,6 +129,8 @@
 			files = (
 				DE157E531B8D041D00EB5434 /* main.swift in Sources */,
 				DE157E5A1B8D04CA00EB5434 /* GameController.swift in Sources */,
+				DE157E5C1B8D075500EB5434 /* constants.swift in Sources */,
+				DE157E5E1B8D07B500EB5434 /* GameWord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
