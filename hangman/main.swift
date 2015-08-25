@@ -13,3 +13,5 @@ func main() -> Int {
     
     return controller.play()
 }
+
+main()
