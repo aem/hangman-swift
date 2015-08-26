@@ -12,12 +12,13 @@ public struct GameController {
     private let board: GameBoard
     
     init() {
-        self.board = GameBoard()
+        self.board = GameBoard(customWord: "poop")
     }
     
     public func play() -> Int {
         print("Welcome to Hangman!\n")
-        print(HANGMAN_BOARD)
+        
+        print(board.printBoard())
         
         return 0
     }

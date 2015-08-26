@@ -15,7 +15,11 @@ public struct GameBoard {
         self.word = GameWord()
     }
     
-    init(customWord: GameWord) {
-        self.word = customWord
+    init(customWord: String) {
+        self.word = GameWord(word: customWord)
+    }
+    
+    func printBoard() -> String {
+        return "\(HANGMAN_BOARD)\n\n\(word.getDisplayWord())"
     }
 }

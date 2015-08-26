@@ -41,6 +41,6 @@ public struct GameWord {
     }
     
     func getDisplayWord() -> String {
-        return displayWord.joinWithSeparator("")
+        return displayWord.joinWithSeparator(" ")
     }
 }
