@@ -9,13 +9,28 @@
 import Foundation
 
 public struct InputCollector {
-    public static func getInput() -> Character {
+    private static func _getInput() -> String! {
         let input: String! = readLine()
-        if input.characters.count > 0 {
-            if let result: Character = input.characters.first {
-                return result
-            }
+        if input.characters.count <= 0 {
+            print("ERROR: Must input some text")
+            return ""
+        }
+        return input
+    }
+    
+    public static func getInputCharacter() -> Character {
+        let input: String! = _getInput()
+        if let result: Character = input.characters.first {
+            return result
         }
         return Character("")
+    }
+    
+    public static func getInputWord() -> String {
+        let input: String! = _getInput()
+        if let result: Array<String> = input.componentsSeparatedByString(" ") {
+            return result[0]
+        }
+        return ""
     }
 }
