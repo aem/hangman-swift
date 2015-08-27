@@ -14,12 +14,12 @@ public struct GameController {
     init() {
         print("Would you like to enter a custom word for someone else to play? (y/n)")
         var answer = InputCollector.getInputCharacter()
-        while !Y_N_INPUTS.contains(answer) {
+        while !Input.isValid(String(answer)) {
             print("Please choose 'y' or 'n'")
             answer = InputCollector.getInputCharacter()
         }
         
-        if Y_INPUTS.contains(answer) {
+        if Input.isYes(String(answer)) {
             print("Please input the word that you'd like someone else to guess!")
             let word = InputCollector.getInputWord()
             self.board = GameBoard(customWord: word)
