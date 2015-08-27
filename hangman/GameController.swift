@@ -36,6 +36,7 @@ public struct GameController {
     }
     
     private func playNextTurn() {
+        self.guess()
         
         if !board.isGameOver() {
             self.playNextTurn()
@@ -44,6 +45,17 @@ public struct GameController {
                 print("Congratulations! You guessed '\(board.getWord())' correctly!")
                 print(Constants.HAPPY_PERSON)
             }
+        }
+    }
+    
+    private func guess() {
+        print("Enter your guess: ")
+        let guess = InputCollector.getInputCharacter()
+        if board.isAlreadyGuessed(guess) {
+            print("You've already guessed '\(guess)', please guess again.")
+            self.guess()
+        } else {
+            self.board.guess(guess)
         }
     }
 }

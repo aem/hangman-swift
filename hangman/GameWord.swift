@@ -20,7 +20,7 @@ func sanitize(word: String) -> String {
 public struct GameWord {
     private let word: String
     private var displayWord: Array<String>
-    private var guesses: Array<String> = []
+    private var guesses: Array<Character> = []
     
     init() {
         self.init(word: randomWord())
@@ -46,5 +46,15 @@ public struct GameWord {
     
     public func getDisplayWord() -> String {
         return displayWord.joinWithSeparator(" ")
+    }
+    
+    public func getGuesses() -> String {
+        var result: String = ""
+        self.guesses.forEach({result += String($0) + " "})
+        return result
+    }
+    
+    public func isAlreadyGuessed(guess: Character) -> Bool {
+        return guesses.contains(guess)
     }
 }

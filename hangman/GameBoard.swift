@@ -20,7 +20,7 @@ public struct GameBoard {
     }
     
     public func getBoard() -> String {
-        return "\(Constants.HANGMAN_BOARD)\n\n\(word.getDisplayWord())"
+        return "\(Constants.HANGMAN_BOARD)\n\nWord: \(word.getDisplayWord())\n\nGuesses: \(word.getGuesses())"
     }
     
     public func getWord() -> String {
@@ -35,5 +35,13 @@ public struct GameBoard {
     public func playerWon() -> Bool {
         // TODO: Implement
         return false
+    }
+    
+    public func isAlreadyGuessed(guess: Character) -> Bool {
+        return self.word.isAlreadyGuessed(guess)
+    }
+    
+    public func guess(guess: Character) {
+        self.word.guess(guess)
     }
 }
