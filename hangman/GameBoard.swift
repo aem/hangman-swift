@@ -9,7 +9,7 @@
 import Foundation
 
 public struct GameBoard {
-    private let word: GameWord
+    private var word: GameWord
     
     init() {
         self.word = GameWord()
@@ -28,20 +28,18 @@ public struct GameBoard {
     }
     
     public func isGameOver() -> Bool {
-        // TODO: Implement
-        return false
+        return self.word.isWordFinished() || self.word.hasTooManyGuesses()
     }
     
     public func playerWon() -> Bool {
-        // TODO: Implement
-        return false
+        return self.word.isWordFinished() && !self.word.hasTooManyGuesses()
     }
     
     public func isAlreadyGuessed(guess: String) -> Bool {
         return self.word.isAlreadyGuessed(guess)
     }
     
-    public func guess(guess: String) {
+    public mutating func guess(guess: String) {
         self.word.guess(guess)
     }
 }

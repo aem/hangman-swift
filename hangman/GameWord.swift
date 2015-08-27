@@ -18,7 +18,7 @@ func sanitize(word: String) -> String {
 }
 
 public struct GameWord {
-    private let word: String
+    private let word: Array<Character>
     private var displayWord: Array<String>
     private var guesses: Array<String> = []
     
@@ -27,21 +27,28 @@ public struct GameWord {
     }
     
     init(word: String) {
-        self.word = sanitize(word)
+        self.word = Array(sanitize(word).characters)
         self.displayWord = Array(count: word.characters.count, repeatedValue: "_")
     }
 
-    public func guess(character: String) -> Bool {
-        // TODO: Implement
-        return false
+    public mutating func guess(userGuess: String) {
+        if word.contains(Character(userGuess)) {
+            for i in 0..<word.count {
+                if String(word[i]) == displayWord[i] {
+                    displayWord[i] = userGuess
+                }
+            }
+        }
     }
     
     public func isWordFinished() -> Bool {
-        return false
+        return !displayWord.contains("_")
     }
     
     public func getWord() -> String {
-        return self.word
+        var acc: String = ""
+        self.word.forEach(){acc += String($0)}
+        return acc
     }
     
     public func getDisplayWord() -> String {
@@ -54,5 +61,10 @@ public struct GameWord {
     
     public func isAlreadyGuessed(guess: String) -> Bool {
         return guesses.contains(guess)
+    }
+    
+    // head, body, 2 arms, 2 legs, face == dead
+    public func hasTooManyGuesses() -> Bool {
+        return guesses.count >= 7
     }
 }
