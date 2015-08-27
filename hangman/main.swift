@@ -9,9 +9,26 @@
 import Foundation
 
 func main() -> Int {
-    let controller = GameController()
+    while true {
+        let controller = GameController()
+        
+        controller.play()
+        
+        print("Would you like to play again? (y/n)")
+        var answer = InputCollector.getInputCharacter()
+        while !Input.isValid(String(answer)) {
+            print("Please choose 'y' or 'n'")
+            answer = InputCollector.getInputCharacter()
+        }
+        
+        if Input.isNo(String(answer)) {
+            print("Thanks for playing!")
+            break
+        }
+    }
     
-    return controller.play()
+    
+    return 0
 }
 
 main()

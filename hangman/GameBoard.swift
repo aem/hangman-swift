@@ -19,7 +19,21 @@ public struct GameBoard {
         self.word = GameWord(word: customWord)
     }
     
-    func printBoard() -> String {
-        return "\(HANGMAN_BOARD)\n\n\(word.getDisplayWord())"
+    public func getBoard() -> String {
+        return "\(Constants.HANGMAN_BOARD)\n\n\(word.getDisplayWord())"
+    }
+    
+    public func getWord() -> String {
+        return self.word.getWord()
+    }
+    
+    public func isGameOver() -> Bool {
+        // TODO: Implement
+        return false
+    }
+    
+    public func playerWon() -> Bool {
+        // TODO: Implement
+        return false
     }
 }

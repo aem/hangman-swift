@@ -29,11 +29,21 @@ public struct GameController {
         }
     }
     
-    public func play() -> Int {
+    public func play() {
         print("Welcome to Hangman!\n")
         
-        print(board.printBoard())
+        self.playNextTurn()
+    }
+    
+    private func playNextTurn() {
         
-        return 0
+        if !board.isGameOver() {
+            self.playNextTurn()
+        } else {
+            if board.playerWon() {
+                print("Congratulations! You guessed '\(board.getWord())' correctly!")
+                print(Constants.HAPPY_PERSON)
+            }
+        }
     }
 }

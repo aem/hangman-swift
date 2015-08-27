@@ -31,16 +31,20 @@ public struct GameWord {
         self.displayWord = Array(count: word.characters.count, repeatedValue: "_")
     }
 
-    func guess(character: Character) -> Bool {
+    public func guess(character: Character) -> Bool {
         // TODO: Implement
         return false
     }
     
-    func isWordFinished() -> Bool {
+    public func isWordFinished() -> Bool {
         return false
     }
     
-    func getDisplayWord() -> String {
+    public func getWord() -> String {
+        return self.word
+    }
+    
+    public func getDisplayWord() -> String {
         return displayWord.joinWithSeparator(" ")
     }
 }
