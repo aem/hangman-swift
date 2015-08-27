@@ -37,11 +37,11 @@ public struct GameBoard {
         return false
     }
     
-    public func isAlreadyGuessed(guess: Character) -> Bool {
+    public func isAlreadyGuessed(guess: String) -> Bool {
         return self.word.isAlreadyGuessed(guess)
     }
     
-    public func guess(guess: Character) {
+    public func guess(guess: String) {
         self.word.guess(guess)
     }
 }

@@ -18,12 +18,12 @@ public struct InputCollector {
         return input
     }
     
-    public static func getInputCharacter() -> Character {
+    public static func getInputCharacter() -> String {
         let input: String! = _getInput()
         if let result: Character = input.characters.first {
-            return result
+            return String(result)
         }
-        return Character("")
+        return ""
     }
     
     public static func getInputWord() -> String {
