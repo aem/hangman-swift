@@ -9,7 +9,7 @@
 import Foundation
 
 public struct GameController {
-    private let board: GameBoard
+    private var board: GameBoard
     
     init() {
         print("Would you like to enter a custom word for someone else to play? (y/n)")
@@ -29,26 +29,32 @@ public struct GameController {
         }
     }
     
-    public func play() {
+    public mutating func play() {
         print("Welcome to Hangman!\n")
+        
+        print(board.getBoard())
         
         self.playNextTurn()
     }
     
-    private func playNextTurn() {
+    private mutating func playNextTurn() {
         self.guess()
+        
+        print(board.getBoard())
         
         if !board.isGameOver() {
             self.playNextTurn()
         } else {
             if board.playerWon() {
                 print("Congratulations! You guessed '\(board.getWord())' correctly!")
-                print(Constants.HAPPY_PERSON)
+                print(HangmanBoards.HAPPY_PERSON.rawValue)
+            } else {
+                print("Ouch. You couldn't quite save him.")
             }
         }
     }
     
-    private func guess() {
+    private mutating func guess() {
         print("Enter your guess: ")
         let guess = InputCollector.getInputCharacter()
         if board.isAlreadyGuessed(guess) {

@@ -10,7 +10,7 @@ import Foundation
 
 func main() -> Int {
     while true {
-        let controller = GameController()
+        var controller = GameController()
         
         controller.play()
         

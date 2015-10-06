@@ -9,12 +9,7 @@
 import Foundation
 
 func randomWord() -> String {
-    return "poop"
-}
-
-func sanitize(word: String) -> String {
-    return word.componentsSeparatedByCharactersInSet(
-        NSCharacterSet.alphanumericCharacterSet()).joinWithSeparator("").lowercaseString
+    return "word"
 }
 
 public struct GameWord {
@@ -27,17 +22,25 @@ public struct GameWord {
     }
     
     init(word: String) {
-        self.word = Array(sanitize(word).characters)
+        self.word = Array(word.characters)
         self.displayWord = Array(count: word.characters.count, repeatedValue: "_")
     }
 
-    public mutating func guess(userGuess: String) {
+    public mutating func guess(userGuess: String) -> Bool {
+        if (userGuess == "") {
+            return false
+        }
+        
         if word.contains(Character(userGuess)) {
             for i in 0..<word.count {
-                if String(word[i]) == displayWord[i] {
+                if String(word[i]) == userGuess {
                     displayWord[i] = userGuess
                 }
             }
+            return true
+        } else {
+            guesses.append(userGuess)
+            return false
         }
     }
     
@@ -57,6 +60,10 @@ public struct GameWord {
     
     public func getGuesses() -> String {
         return self.guesses.joinWithSeparator(" ")
+    }
+    
+    public func getGuessCount() -> Int {
+        return self.guesses.count
     }
     
     public func isAlreadyGuessed(guess: String) -> Bool {
